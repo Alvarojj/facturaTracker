@@ -19,7 +19,6 @@ public class Usuario {
     private int id;
     private String apellido;
     private String cedula;
-    private String clave;
     private String correo;
     private String departamento;
     private String direccion;

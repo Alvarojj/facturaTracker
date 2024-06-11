@@ -42,7 +42,7 @@ public class FacturaService {
             facturaRepository.save(newFactura);
             List<Producto> productos = getProductos(factura, newFactura);
             productoRepository.saveAll(productos);
-            sendQueue(usuario.getCorreo(), comercio.getRazon());
+            //sendQueue(usuario.getCorreo(), comercio.getRazon());
             return "Factura enviada correctamente";
         }
         return "Comercio no encontrado";
