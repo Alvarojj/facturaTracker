@@ -1,0 +1,6 @@
+services:
+  facturatracker:
+    container_name: facturatracker
+    build: .
+    ports:
+      - 8081:8081
