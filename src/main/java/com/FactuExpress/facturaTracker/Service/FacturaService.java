@@ -39,10 +39,13 @@ public class FacturaService {
             factura.setComercio(comercio);
             factura.setFecha(new Date());
             facturaRepository.save(factura);
+            int n = usuarioRepository.updateAhorro(usuario.getAhorroPapel() + 15, usuario.getId());
             //sendQueue(usuario.getCorreo(), comercio.getRazon());
             return "Factura enviada correctamente";
+        } else {
+            return "Factura no enviada";
         }
-        return "Comercio no encontrado";
+
     }
 
     private void sendQueue(String receptor, String sender){
