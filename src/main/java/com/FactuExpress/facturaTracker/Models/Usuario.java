@@ -12,20 +12,18 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "usuario")
+@Table(name = "Usuario")
 public class Usuario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_usuario")
     private int id;
+    @Column(name = "ahorro_papel")
+    private int ahorroPapel;
     private String apellido;
     private String cedula;
     private String correo;
-    private String departamento;
-    private String direccion;
-    private Date fechaNacimiento;
-    private String municipio;
     private String nombre;
-    private String telefono;
     @OneToMany(mappedBy = "usuario")
     List<Factura> facturas;
 }

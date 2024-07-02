@@ -18,18 +18,13 @@ public class Factura {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    @Column(name = "numero_factura")
-    private int numerofact;
     private Date fecha;
-    private double iva;
-    private double subtotal;
     private double total;
-    @OneToMany(mappedBy = "factura", cascade = CascadeType.ALL)
-    private List<Producto> producto;
+    private String descripcion;
     @ManyToOne()
-    @JoinColumn(name = "idusuario")
+    @JoinColumn(name = "id_usuario")
     private Usuario usuario;
     @ManyToOne()
-    @JoinColumn(name = "idcomercio")
+    @JoinColumn(name = "id_comercio")
     private Comercio comercio;
 }

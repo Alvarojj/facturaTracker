@@ -11,16 +11,13 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
+@Table(name = "comercio")
 public class Comercio {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_comercio")
     private int id;
-    private String razon;
-    private int nit;
-    private String telefono;
-    private String direccion;
-    private String municipio;
-    private String departamento;
+    private String nombre;
     @OneToMany(mappedBy = "comercio")
     List<Factura> facturas;
 }

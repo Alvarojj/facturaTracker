@@ -1,7 +1,6 @@
 package com.FactuExpress.facturaTracker.Controller;
 
 import com.FactuExpress.facturaTracker.Models.Factura;
-import com.FactuExpress.facturaTracker.Models.FacturaDto;
 import com.FactuExpress.facturaTracker.Service.FacturaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -9,14 +8,14 @@ import org.springframework.web.bind.annotation.*;
 
 
 @RestController
-@RequestMapping()
+@RequestMapping("Factura")
 public class facturaController {
 	@Autowired
 	FacturaService facturaService;
 
 
-	@GetMapping()
-	public String newFactura(@RequestBody FacturaDto factura) {
+	@PostMapping("save")
+	public String newFactura(@RequestBody Factura factura) {
 		return facturaService.saveFactura(factura);
 	}
 }
